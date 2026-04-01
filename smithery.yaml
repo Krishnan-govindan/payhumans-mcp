@@ -1,0 +1,25 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - agentApiKey
+    properties:
+      agentApiKey:
+        type: string
+        title: Agent API Key
+        description: "Your Pay Humans API key (starts with ph_). Get one at https://payhumans.io"
+      apiBaseUrl:
+        type: string
+        title: API Base URL
+        description: "Pay Humans API endpoint"
+        default: "https://api.payhumans.io"
+  commandFunction: |
+    (config) => ({
+      command: "node",
+      args: ["dist/index.js"],
+      env: {
+        AGENT_API_KEY: config.agentApiKey,
+        API_BASE_URL: config.apiBaseUrl ?? "https://api.payhumans.io"
+      }
+    })

@@ -1,0 +1,50 @@
+{
+  "name": "payhumans-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the Pay Humans platform — lets AI agents discover and hire human experts for research, verification, delivery, and more.",
+  "type": "module",
+  "bin": {
+    "payhumans-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "smithery.yaml"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "human-in-the-loop",
+    "pay-humans",
+    "expert-network",
+    "claude",
+    "smithery"
+  ],
+  "author": "Pay Humans <team@payhumans.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prithvi100/payhumans-mcp.git"
+  },
+  "homepage": "https://github.com/Prithvi100/payhumans-mcp",
+  "bugs": {
+    "url": "https://github.com/Prithvi100/payhumans-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0"
+  }
+}
